@@ -1,0 +1,1 @@
+### Rest application 'News Portal' sample

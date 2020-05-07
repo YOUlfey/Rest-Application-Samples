@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "8d5fd82e-a3b8-466d-b237-e34ed8211e38",
+		"name": "News portal rest app example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL TOPICS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "{{HOST}}/topics"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEW TOPIC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TestTopic2\"\n}"
+				},
+				"url": "{{HOST}}/topics"
+			},
+			"response": []
+		},
+		{
+			"name": "GET TOPIC BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/topics/f8f4b1de-f6a7-482d-b04c-3d01a0bea264"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE EXISTING TOPIC",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"updated name\"\n}"
+				},
+				"url": "{{HOST}}/topics/f8f4b1de-f6a7-482d-b04c-3d01a0bea264"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEWS BY TOPIC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"Test news test newsTest news test newsTest news test ne222wsTest news test news\"\n}"
+				},
+				"url": "{{HOST}}/news/topics/f8f4b1de-f6a7-482d-b04c-3d01a0bea264"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEWS BULD REQUEST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"message\": \"messagemessagemessagemessagemessagemessagemessage1\"\n\t},\n\t{\n\t\t\"message\": \"messagemessagemessagemessagemessagemessagemessage2\"\n\t},\n\t{\n\t\t\"message\": \"messagemessagemessagemessagemessagemessagemessage3\"\n\t},\n\t{\n\t\t\"message\": \"messagemessagemessagemessagemessagemessagemessage4\"\n\t}\n]"
+				},
+				"url": "{{HOST}}/news/topics/bulk/a41c5e44-d791-41b6-92b9-68bfe0e341d0"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL NEWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/news"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL NEWS BY TOPIC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/news/get-all-by-topic/7704e7be-8371-4bc8-ac33-f2d58b121b24"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE EXISTING NEWS",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"new message content limit 30 symbols\"\n}"
+				},
+				"url": "{{HOST}}/news/2804ee28-8899-43cd-9ae7-51818562bdd2"
+			},
+			"response": []
+		},
+		{
+			"name": "REMOVE EXISTING TOPIC",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{HOST}}/topics/a41c5e44-d791-41b6-92b9-68bfe0e341d0"
+			},
+			"response": []
+		},
+		{
+			"name": "SUBSCRIBE TO TOPIC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@mail.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/subscription/a41c5e44-d791-41b6-92b9-68bfe0e341d0/subscribe"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
