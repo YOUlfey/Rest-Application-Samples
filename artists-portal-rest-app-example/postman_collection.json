@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "655b58bf-8c28-4365-b4a9-fcb8c424d52c",
+		"name": "Artists portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL ARTISTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/artists"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL STYLES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/styles"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE STYLE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"name\": \"Стиль\",\n     \"description\": \"Описание стиля\"\n}"
+				},
+				"url": "{{HOST}}/styles"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE ARTIST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Имя художника\",\n\t\"dateBirth\": \"2003-12-12\",\n    \"style\": {\n    \t\"id\": \"ee03f5e0-7a0c-4a25-b082-b4d2b1031f29\"\n\t}\n}"
+				},
+				"url": "{{HOST}}/artists"
+			},
+			"response": []
+		},
+		{
+			"name": "GET STYLE BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/styles/cb3a5b92-2822-4318-9753-f14c3b5b64b3"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ARTIST BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HOST}}/artists/98738bee-b2cb-49ae-9e9a-3d9b512dbc29"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE STYLE BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{HOST}}/styles/cb3a5b92-2822-4318-9753-f14c3b5b64b3"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ARTIST BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{HOST}}/artists/98738bee-b2cb-49ae-9e9a-3d9b512dbc29"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE STYLE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": \"7ce9d7d4-4342-427d-afa2-2f8114435ed9\",\n        \"name\": \"UPD\",\n        \"description\": \"UPD\"\n    }"
+				},
+				"url": "{{HOST}}/styles/7ce9d7d4-4342-427d-afa2-2f8114435ed9"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE ARTIST",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Имя UPD\",\n        \"dateBirth\": \"2003-12-12\",\n        \"dateDeath\": null,\n        \"style\": {\n            \"id\": \"7ce9d7d4-4342-427d-afa2-2f8114435ed9\",\n            \"name\": \"Стиль\",\n            \"description\": \"Описание стиля\"\n        }\n    }"
+				},
+				"url": "{{HOST}}/artists/5e04bd90-4eb6-4e59-80ba-1e04fb7ef49a"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL ARTISTS BY NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/artists/get-all-by-name?name=new name",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"artists",
+						"get-all-by-name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "new name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL STYLES BY NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/styles/get-all-by-name?name=Test",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"styles",
+						"get-all-by-name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bf101bd1-a982-48d1-a9c1-832df1d6194b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a1f9209b-40a5-4616-ae43-385e7b001199",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

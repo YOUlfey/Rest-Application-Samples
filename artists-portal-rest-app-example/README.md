@@ -1,0 +1,1 @@
+### Rest application 'Artists portal' sample
