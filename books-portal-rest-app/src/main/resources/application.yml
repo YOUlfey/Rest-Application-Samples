@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:@project.basedir@/src/main/resources/db
+    driver-class-name: org.h2.Driver
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+  resources:
+    static-locations: classpath:/static
+server:
+  port: 8080
