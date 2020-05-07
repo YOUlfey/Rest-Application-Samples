@@ -11,7 +11,7 @@
     <groupId>me.youlfey.rest.example</groupId>
     <artifactId>artist-portal-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lab4</name>
+    <name>artists-portal</name>
 
     <properties>
         <java.version>1.8</java.version>
