@@ -1,1 +1,1 @@
-# Rest-Application-Samples
+# Rest Applications Samples
